@@ -11,7 +11,7 @@ import Alamofire
 import ImageLoader
 
 class NewsListViewController: UIViewController , UITableViewDataSource{
-
+    
     @IBOutlet weak var newsListTableView: UITableView!
     var newsList:[News] = []
     override func viewDidLoad() {
@@ -43,26 +43,36 @@ class NewsListViewController: UIViewController , UITableViewDataSource{
         logoImg.layer.masksToBounds = true
         logoImg.layer.borderColor = UIColor.blueColor().CGColor
         logoImg.layer.borderWidth = 2
-//        logoImg.clipsToBounds = true
+        //        logoImg.clipsToBounds = true
         return cell
     }
     
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        return 55
-//    }
+    //    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    //        return 55
+    //    }
     
     func bindingUISoruce(newsListLoaded : [News]){
         newsList = newsListLoaded
         newsListTableView.dataSource = self
         dispatch_async(dispatch_get_main_queue()) {
-          
+            
             self.newsListTableView.reloadData()
         }
-
+        
     }
     
     func loadNews(){
         NewsService.getNewsListFormServer(nil,succeedCallback: bindingUISoruce)
+    }
+    
+    override func  prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier=="goToNewsDetails"{
+            let vc = segue.destinationViewController as! NewsDetailsController
+            let indexPath = newsListTableView.indexPathForSelectedRow
+            if let index = indexPath {
+                vc.sid = newsList[index.row].sid
+            }
+        }
     }
     
 }

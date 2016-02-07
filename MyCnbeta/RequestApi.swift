@@ -14,21 +14,26 @@ enum RequestApi :String {
     
     static func getUrl(apiEnmu : RequestApi,newActionType : NewActionType,extParams:[String:String]=[String:String]())->String{
         let date = NSDate()
-        let timeSecondsStr=(floor(date.timeIntervalSince1970 * 1000))
+        let timeSecondsStr=(Int(date.timeIntervalSince1970 * 1000))
         let privateKey="mpuffgvbvbttn3Rc"
         var endSid=""
-        var extParamsStr = [String]()
+        var topicid=""
+        var extParamsArr = [String]()
         for (k , v) in extParams{
             if(k=="end_sid"){
                 endSid="end_sid=\(v)&"
+                topicid="topicid=null&"
             }else{
-                extParamsStr.append("\(k)=\(v)")
-                
+                extParamsArr.append("\(k)=\(v)")
             }
+        }
+        var extParamsStr = extParamsArr.joinWithSeparator("&")
+        if   !extParamsStr.isEmpty{
+           extParamsStr = extParamsStr + "&"
         }
         
         
-        let parmsWithSign = "app_key=10000&\(endSid)format=json&method=\(newActionType.rawValue)&\(extParamsStr.joinWithSeparator("&"))timestamp=\(timeSecondsStr)&topicid=null&v=1.0&\(privateKey)"
+        let parmsWithSign = "app_key=10000&\(endSid)format=json&method=\(newActionType.rawValue)&\(extParamsStr)timestamp=\(timeSecondsStr)&\(topicid)v=1.0&\(privateKey)"
         let signStr = parmsWithSign.md5()
         return "\(apiEnmu.rawValue)?\(parmsWithSign)&sign=\(signStr)"
         

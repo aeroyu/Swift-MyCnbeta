@@ -15,6 +15,8 @@
 		3D2D968B1C66DE580056752B /* RequestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D96891C66DE580056752B /* RequestApi.swift */; };
 		3D2D968D1C66DE610056752B /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D968C1C66DE610056752B /* NewsListViewController.swift */; };
 		3D2D96901C66DE7B0056752B /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D968F1C66DE7B0056752B /* News.swift */; };
+		3D2D96921C6726F70056752B /* NewsDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D96911C6726F70056752B /* NewsDetailsController.swift */; };
+		3D2D96941C6728630056752B /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D96931C6728630056752B /* NetworkHelper.swift */; };
 		A7B6395CED31753E59459FD0 /* Pods_MyCnbeta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6C23F9A0FE386C7EE35523 /* Pods_MyCnbeta.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,8 @@
 		3D2D96891C66DE580056752B /* RequestApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestApi.swift; sourceTree = "<group>"; };
 		3D2D968C1C66DE610056752B /* NewsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		3D2D968F1C66DE7B0056752B /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		3D2D96911C6726F70056752B /* NewsDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailsController.swift; sourceTree = "<group>"; };
+		3D2D96931C6728630056752B /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		76B4917819B9AC1CF4824119 /* Pods-MyCnbeta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCnbeta.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyCnbeta/Pods-MyCnbeta.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +95,7 @@
 		3D2D96841C66DE100056752B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				3D2D96931C6728630056752B /* NetworkHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				3D2D968C1C66DE610056752B /* NewsListViewController.swift */,
+				3D2D96911C6726F70056752B /* NewsDetailsController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -267,7 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D2D96941C6728630056752B /* NetworkHelper.swift in Sources */,
 				3D2D96901C66DE7B0056752B /* News.swift in Sources */,
+				3D2D96921C6726F70056752B /* NewsDetailsController.swift in Sources */,
 				3D2D968D1C66DE610056752B /* NewsListViewController.swift in Sources */,
 				3D2D968A1C66DE580056752B /* NewService.swift in Sources */,
 				3D2D968B1C66DE580056752B /* RequestApi.swift in Sources */,
