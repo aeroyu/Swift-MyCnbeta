@@ -1,0 +1,6 @@
+framework module Pods_MyCnbeta {
+  umbrella header "Pods-MyCnbeta-umbrella.h"
+
+  export *
+  module * { export * }
+}
