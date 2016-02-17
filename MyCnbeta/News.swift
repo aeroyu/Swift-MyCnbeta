@@ -32,7 +32,22 @@ class News : NSObject{
             }
         }
     }
-
+    var htmlBody: String? {
+        get{
+            let css="<style>img{max-width:100%}</style>"
+            
+            var html=""
+            html+=css
+            html+="<div><h2>\(title)</h2></div>"
+            html+="<div>\(source)</div>"
+            html+="<div>\(time)</div>"
+            html+="<hr/>"
+            html+=bodyText!
+            return html
+        }
+    }
+    
+    
     init(sid :String,title:String,homeText:String,bodyText:String,time:String,source:String){
         self.sid=sid
         self.title=title

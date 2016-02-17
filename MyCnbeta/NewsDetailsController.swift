@@ -31,10 +31,10 @@ class NewsDetailsController: UIViewController{
     func loadNewsDetails(){
         if let sid = sid{
             NewsService.getNewsDeatils(sid,succeedCallback:  { (newsModel) in
-                self.newsTitle.text = newsModel.title
-                self.newsSorce.text = newsModel.source
-                self.newsDate.text = newsModel.time
-                self.newBodyWebView.loadHTMLString(newsModel.bodyText!, baseURL: nil)
+//                self.newsTitle.text = newsModel.title
+//                self.newsSorce.text = newsModel.source
+//                self.newsDate.text = newsModel.time
+                self.newBodyWebView.loadHTMLString(newsModel.htmlBody!, baseURL: nil)
                 
                 self.toggleLoadingSpin(false)
                 
