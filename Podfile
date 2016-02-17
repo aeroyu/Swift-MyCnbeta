@@ -6,6 +6,7 @@ target 'MyCnbeta' do
   pod 'SwiftyJSON'
   pod 'CryptoSwift'
   pod 'ImageLoader'
+  pod 'XWSwiftRefresh', '~> 0.1.6'
 end
 
 

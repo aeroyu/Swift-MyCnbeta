@@ -3,17 +3,20 @@ PODS:
   - CryptoSwift (0.2.2)
   - ImageLoader (0.8.7)
   - SwiftyJSON (2.3.2)
+  - XWSwiftRefresh (0.1.6)
 
 DEPENDENCIES:
   - Alamofire
   - CryptoSwift
   - ImageLoader
   - SwiftyJSON
+  - XWSwiftRefresh (~> 0.1.6)
 
 SPEC CHECKSUMS:
   Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
   CryptoSwift: d382228d6301c09474132417878a741c2a2e68cd
   ImageLoader: ceeafe0b760b4acbb919e384033fc94a716f4e26
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  XWSwiftRefresh: 3667a6660498aa230380ccb8d89bfa2be075f3ce
 
 COCOAPODS: 0.39.0

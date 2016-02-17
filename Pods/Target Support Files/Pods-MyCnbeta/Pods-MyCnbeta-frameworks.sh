@@ -88,10 +88,12 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-MyCnbeta/CryptoSwift.framework"
   install_framework "Pods-MyCnbeta/ImageLoader.framework"
   install_framework "Pods-MyCnbeta/SwiftyJSON.framework"
+  install_framework "Pods-MyCnbeta/XWSwiftRefresh.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-MyCnbeta/Alamofire.framework"
   install_framework "Pods-MyCnbeta/CryptoSwift.framework"
   install_framework "Pods-MyCnbeta/ImageLoader.framework"
   install_framework "Pods-MyCnbeta/SwiftyJSON.framework"
+  install_framework "Pods-MyCnbeta/XWSwiftRefresh.framework"
 fi

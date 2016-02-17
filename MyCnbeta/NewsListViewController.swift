@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import ImageLoader
+import XWSwiftRefresh
 
 class NewsListViewController: UIViewController , UITableViewDataSource{
     
@@ -17,6 +18,7 @@ class NewsListViewController: UIViewController , UITableViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         loadNews()
+        tableViewEventBind()
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -51,8 +53,13 @@ class NewsListViewController: UIViewController , UITableViewDataSource{
     //        return 55
     //    }
     
-    func bindingUISoruce(newsListLoaded : [News]){
-        newsList = newsListLoaded
+    func bindingUISoruce(newsListLoaded : [News],isInit:Bool=true){
+        if isInit{
+            newsList = newsListLoaded
+        }else{
+            newsList.appendContentsOf(newsListLoaded)
+        }
+        
         newsListTableView.dataSource = self
         dispatch_async(dispatch_get_main_queue()) {
             
@@ -61,8 +68,32 @@ class NewsListViewController: UIViewController , UITableViewDataSource{
         
     }
     
-    func loadNews(){
-        NewsService.getNewsListFormServer(nil,succeedCallback: bindingUISoruce)
+    func loadNews(lastSid:String?=nil,callback : (()->Void)?=nil ){
+        NewsService.getNewsListFormServer(lastSid,succeedCallback: { newsListLoaded in
+            self.bindingUISoruce(newsListLoaded,isInit: lastSid==nil)
+            if let callback=callback{
+                callback()
+            }
+        } )
+    }
+    
+    func tableViewEventBind(){
+        print("!!!2")
+
+        self.newsListTableView.headerView = XWRefreshNormalHeader(target: self, action: "upPullLoadData")
+        self.newsListTableView.footerView = XWRefreshAutoNormalFooter(target: self, action: "downPlullLoadData")
+        
+    }
+    
+    func upPullLoadData(){
+        loadNews(nil,callback: { self.newsListTableView.headerView?.endRefreshing()})
+    }
+    
+    func downPlullLoadData(){
+        print("!!!1")
+        loadNews(newsList.last?.sid,callback: {self.newsListTableView.footerView?.endRefreshing()})
+        //self.newsListTableView.footerView?.endRefreshing()
+        
     }
     
     override func  prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
