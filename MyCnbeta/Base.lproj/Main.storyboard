@@ -108,29 +108,62 @@
                                 <rect key="frame" x="142" y="218" width="37" height="37"/>
                                 <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQj-13-wQa">
+                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items/>
+                            </tabBar>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0nG-lZ-xFS">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcb-Sc-A1e">
+                                <rect key="frame" x="20" y="530" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="OGG-ec-MsV" kind="unwind" unwindAction="unwindToRed:" id="ErX-ad-cCL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hf-tQ-rpC">
+                                <rect key="frame" x="137" y="530" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zk-HK-vUK">
+                                <rect key="frame" x="254" y="530" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6hf-tQ-rpC" firstAttribute="centerX" secondItem="kQj-13-wQa" secondAttribute="centerX" id="2wv-RR-bEd"/>
+                            <constraint firstItem="kcb-Sc-A1e" firstAttribute="centerY" secondItem="kQj-13-wQa" secondAttribute="centerY" constant="1.5" id="4IQ-M8-EG6"/>
+                            <constraint firstItem="kQj-13-wQa" firstAttribute="top" secondItem="0nG-lZ-xFS" secondAttribute="bottom" id="9Q8-Tw-FEf"/>
                             <constraint firstItem="0nG-lZ-xFS" firstAttribute="leading" secondItem="lo5-gQ-K19" secondAttribute="leading" id="9YR-oZ-OkG"/>
-                            <constraint firstItem="0nG-lZ-xFS" firstAttribute="top" secondItem="lo5-gQ-K19" secondAttribute="top" constant="64" id="JoR-vd-rps"/>
+                            <constraint firstItem="0nG-lZ-xFS" firstAttribute="top" secondItem="lo5-gQ-K19" secondAttribute="top" constant="20" id="JoR-vd-rps"/>
+                            <constraint firstItem="kQj-13-wQa" firstAttribute="leading" secondItem="0nG-lZ-xFS" secondAttribute="leading" id="K56-8G-vbu"/>
                             <constraint firstItem="FQK-gm-zL5" firstAttribute="centerX" secondItem="lo5-gQ-K19" secondAttribute="centerX" id="Kik-nj-5Ot"/>
                             <constraint firstItem="FQK-gm-zL5" firstAttribute="top" secondItem="UYv-9i-Xn9" secondAttribute="bottom" constant="198" id="LmH-CM-Uyj"/>
-                            <constraint firstItem="0nG-lZ-xFS" firstAttribute="bottom" secondItem="1hX-L1-biF" secondAttribute="top" id="h66-fR-x4I"/>
+                            <constraint firstItem="9Zk-HK-vUK" firstAttribute="leading" secondItem="6hf-tQ-rpC" secondAttribute="trailing" constant="71" id="QTL-db-bMw"/>
+                            <constraint firstItem="kQj-13-wQa" firstAttribute="trailing" secondItem="0nG-lZ-xFS" secondAttribute="trailing" id="RKH-Kn-wX1"/>
+                            <constraint firstItem="6hf-tQ-rpC" firstAttribute="baseline" secondItem="kcb-Sc-A1e" secondAttribute="baseline" id="U1i-zl-7IK"/>
+                            <constraint firstItem="kcb-Sc-A1e" firstAttribute="leading" secondItem="lo5-gQ-K19" secondAttribute="leadingMargin" id="VvC-1A-0Ez"/>
+                            <constraint firstItem="0nG-lZ-xFS" firstAttribute="bottom" secondItem="1hX-L1-biF" secondAttribute="top" constant="-49" id="h66-fR-x4I"/>
+                            <constraint firstItem="9Zk-HK-vUK" firstAttribute="baseline" secondItem="6hf-tQ-rpC" secondAttribute="baseline" id="sp5-Mb-aQZ"/>
                             <constraint firstItem="0nG-lZ-xFS" firstAttribute="centerX" secondItem="FQK-gm-zL5" secondAttribute="centerX" id="t6E-LD-WVR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="D2r-fR-m2o"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="backBtn" destination="kcb-Sc-A1e" id="SaT-zF-Zec"/>
+                        <outlet property="commentBtn" destination="9Zk-HK-vUK" id="AOR-6T-fa6"/>
+                        <outlet property="favBtn" destination="6hf-tQ-rpC" id="5RC-Mg-hHA"/>
                         <outlet property="loadingSpin" destination="FQK-gm-zL5" id="pnt-Pv-cYz"/>
                         <outlet property="newBodyWebView" destination="0nG-lZ-xFS" id="Zsw-p0-0rV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xqh-Pa-8wt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="OGG-ec-MsV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1177" y="440"/>
         </scene>

@@ -106,5 +106,8 @@ class NewsListViewController: UIViewController , UITableViewDataSource{
         }
     }
     
+    @IBAction func unwindToRed(segue: UIStoryboardSegue) {
+    }
+    
 }
 
