@@ -21,6 +21,8 @@ class NewsDetailsController: UIViewController{
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var favBtn: UIButton!
     @IBOutlet weak var commentBtn: UIButton!
+   
+    @IBOutlet weak var commentCount: UILabel!
     
     
     override func viewDidLoad() {
@@ -45,7 +47,7 @@ class NewsDetailsController: UIViewController{
 //                self.newsSorce.text = newsModel.source
 //                self.newsDate.text = newsModel.time
                 self.newBodyWebView.loadHTMLString(newsModel.htmlBody!, baseURL: nil)
-                
+                self.commentCount.text = String(newsModel.commentCount!)
                 self.toggleLoadingSpin(false)
                 
                 

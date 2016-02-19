@@ -32,7 +32,7 @@ class NewsService{
         NetworkHelper.getHttpRequest(requestUrl, succeedCallback : { (responseData) in
             if let newsItem = responseData as? Dictionary<String,String>{
                 
-                succeedCallback(News(sid: newsItem["sid"]!,title:newsItem["title"]!,homeText:newsItem["hometext"]!,bodyText:newsItem["bodytext"]!,time:newsItem["time"]!,source:newsItem["source"]!))
+                succeedCallback(News(sid: newsItem["sid"]!,title:newsItem["title"]!,homeText:newsItem["hometext"]!,bodyText:newsItem["bodytext"]!,time:newsItem["time"]!,source:newsItem["source"]!, commentCount: Int(newsItem["comments"]!)!))
             }
         })
     }

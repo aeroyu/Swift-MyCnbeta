@@ -17,6 +17,7 @@ class News : NSObject{
     var thumb : String?
     var bodyText : String?
     var time : String
+    var commentCount : Int?
     var source : String? {
         willSet{
             if let newValue = newValue{
@@ -48,13 +49,14 @@ class News : NSObject{
     }
     
     
-    init(sid :String,title:String,homeText:String,bodyText:String,time:String,source:String){
+    init(sid :String,title:String,homeText:String,bodyText:String,time:String,source:String,commentCount:Int){
         self.sid=sid
         self.title=title
         self.homeText=homeText
         self.bodyText=bodyText
         self.time=time
         self.source=source
+        self.commentCount=commentCount
     }
     
     init(sid:String,title:String,time:String,topicLogo:String){
