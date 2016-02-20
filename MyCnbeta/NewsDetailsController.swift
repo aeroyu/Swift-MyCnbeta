@@ -24,7 +24,7 @@ class NewsDetailsController: UIViewController{
    
     @IBOutlet weak var commentCount: UILabel!
     
-    
+    @IBOutlet weak var tabBar: UITabBar!
     override func viewDidLoad() {
         super.viewDidLoad()
         toggleLoadingSpin(true)
@@ -70,5 +70,6 @@ class NewsDetailsController: UIViewController{
         backBtn.setFAIcon(FAType.FAArrowCircleOLeft,forState: UIControlState.Normal)
         favBtn.setFAIcon(FAType.FAStar,forState: UIControlState.Normal)
         commentBtn.setFAIcon(FAType.FAComment,forState: UIControlState.Normal)
+    
     }
 }

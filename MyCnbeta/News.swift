@@ -40,7 +40,7 @@ class News : NSObject{
             var html=""
             html+=css
             html+="<div><h2>\(title)</h2></div>"
-            html+="<div>\(source)</div>"
+            html+="<div>\(source ?? "")</div>"
             html+="<div>\(time)</div>"
             html+="<hr/>"
             html+=bodyText!

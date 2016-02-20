@@ -19,6 +19,8 @@
 		3D2D96941C6728630056752B /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2D96931C6728630056752B /* NetworkHelper.swift */; };
 		702CCE2B1C75EB8000E125EA /* FAIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702CCE2A1C75EB8000E125EA /* FAIcon.swift */; };
 		702CCE2C1C75EC8200E125EA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 702CCE291C75EB5D00E125EA /* FontAwesome.ttf */; };
+		702CCE2E1C7861D200E125EA /* Todo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 702CCE2D1C7861D200E125EA /* Todo.txt */; };
+		702CCE301C78661300E125EA /* CommentListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702CCE2F1C78661300E125EA /* CommentListController.swift */; };
 		A7B6395CED31753E59459FD0 /* Pods_MyCnbeta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6C23F9A0FE386C7EE35523 /* Pods_MyCnbeta.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		3D2D96931C6728630056752B /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		702CCE291C75EB5D00E125EA /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		702CCE2A1C75EB8000E125EA /* FAIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FAIcon.swift; sourceTree = "<group>"; };
+		702CCE2D1C7861D200E125EA /* Todo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Todo.txt; sourceTree = "<group>"; };
+		702CCE2F1C78661300E125EA /* CommentListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentListController.swift; sourceTree = "<group>"; };
 		76B4917819B9AC1CF4824119 /* Pods-MyCnbeta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCnbeta.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyCnbeta/Pods-MyCnbeta.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +88,7 @@
 				702CCE291C75EB5D00E125EA /* FontAwesome.ttf */,
 				3D2D96781C66DD010056752B /* Assets.xcassets */,
 				3D2D967D1C66DD010056752B /* Info.plist */,
+				702CCE2D1C7861D200E125EA /* Todo.txt */,
 			);
 			path = MyCnbeta;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			children = (
 				3D2D968C1C66DE610056752B /* NewsListViewController.swift */,
 				3D2D96911C6726F70056752B /* NewsDetailsController.swift */,
+				702CCE2F1C78661300E125EA /* CommentListController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -219,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				702CCE2E1C7861D200E125EA /* Todo.txt in Resources */,
 				702CCE2C1C75EC8200E125EA /* FontAwesome.ttf in Resources */,
 				3D2D967C1C66DD010056752B /* LaunchScreen.storyboard in Resources */,
 				3D2D96791C66DD010056752B /* Assets.xcassets in Resources */,
@@ -288,6 +295,7 @@
 				3D2D968A1C66DE580056752B /* NewService.swift in Sources */,
 				3D2D968B1C66DE580056752B /* RequestApi.swift in Sources */,
 				3D2D96721C66DD010056752B /* AppDelegate.swift in Sources */,
+				702CCE301C78661300E125EA /* CommentListController.swift in Sources */,
 				702CCE2B1C75EB8000E125EA /* FAIcon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,7 +19,7 @@ class NewsListViewController: UIViewController , UITableViewDataSource{
         super.viewDidLoad()
         loadNews()
         tableViewEventBind()
-        
+        self.navigationController?.hidesBarsOnSwipe = true
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -78,8 +78,6 @@ class NewsListViewController: UIViewController , UITableViewDataSource{
     }
     
     func tableViewEventBind(){
-        print("!!!2")
-
         self.newsListTableView.headerView = XWRefreshNormalHeader(target: self, action: "upPullLoadData")
         self.newsListTableView.footerView = XWRefreshAutoNormalFooter(target: self, action: "downPlullLoadData")
         
@@ -107,6 +105,7 @@ class NewsListViewController: UIViewController , UITableViewDataSource{
     }
     
     @IBAction func unwindToRed(segue: UIStoryboardSegue) {
+        self.navigationController?.navigationBarHidden = false
     }
     
 }
